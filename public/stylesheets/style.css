@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.editor-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1400px; /* Maximum width */
+    height: 80vh; /* Adjusted height for responsiveness */
+    max-height: 1000px; /* Maximum height */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 720px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-right: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #ffffff;
+    border-bottom: 3px solid #007bff;
+    color: #007bff;
+}
+
+/* Blur Section Styles */
+.blur-section {
+    margin-bottom: 8px;
+}
+
+.blur-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.blur-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start; /* Aligns items to the left */
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blur-options .upload-box {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #007bff;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.blur-options .upload-box:hover {
+    background-color: #e6f7ff;
+    border-color: #0056b3;
+}
+
+.blur-options img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.blur-options img:hover {
+    transform: scale(1.05);
+}
+
+/* Image Selection Styles */
+.image-selection {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.image-selection h3 {
+    margin-bottom: 7px;
+    font-size: 20px;
+    color: #333;
+}
+
+.upload-section {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-box {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.upload-box:hover {
+    background-color: #e6f7ff;
+    border-color: #0056b3;
+}
+
+.upload-label {
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 60px;
+    color: #007bff;
+    display: block;
+}
+
+.upload-box p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.thumb-box {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.thumb-box:hover {
+    transform: scale(1.05);
+}
+
+/* Preview Area Styles */
+.preview-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#main-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 2;
+}
+
+.controls-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 3;
+}
+
+.control-button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.control-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* Download Button Styles */
+.download-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls-overlay {
+        top: 10px;
+        right: 10px;
+        flex-direction: column;
+    }
+
+    .control-button {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-box {
+        height: 120px;
+    }
+
+    .upload-icon {
+        font-size: 40px;
+    }
+
+    .blur-options img, .image-grid img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .control-button {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .download-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
