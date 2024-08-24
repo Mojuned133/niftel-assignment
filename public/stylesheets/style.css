@@ -17,9 +17,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    max-width: 1400px; /* Maximum width */
-    height: 80vh; /* Adjusted height for responsiveness */
-    max-height: 1000px; /* Maximum height */
+    max-width: 1000px; 
+    height: 80vh; 
+    max-height: 750px; 
 }
 
 /* Sidebar Styles */
@@ -55,7 +55,7 @@ body {
 
 /* Blur Section Styles */
 .blur-section {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .blur-section h3 {
@@ -68,21 +68,23 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    justify-content: flex-start; /* Aligns items to the left */
+    justify-content: flex-start; 
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
-    padding: 20px;
-    min-height: 10px;
+    padding: 10px;
+    min-height: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 100px; 
+    overflow-y: auto; 
 }
 
 .blur-options .upload-box {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border: 2px dashed #007bff;
     background-color: #f0f8ff;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -106,7 +108,7 @@ body {
 
 /* Image Selection Styles */
 .image-selection {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -166,6 +168,8 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    max-height: 200px; 
+    overflow-y: auto; 
 }
 
 .thumb-box {
@@ -272,7 +276,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .editor-container {
         flex-direction: column;
         height: auto;
@@ -285,6 +289,22 @@ body {
     }
 
     .tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        width: calc(50% - 5px);
+        margin-bottom: 5px;
+    }
+
+    .controls-overlay {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .tabs {
         flex-direction: column;
     }
 
@@ -294,15 +314,19 @@ body {
     }
 
     .controls-overlay {
+        flex-direction: column;
         top: 10px;
         right: 10px;
-        flex-direction: column;
     }
 
     .control-button {
         width: 32px;
         height: 32px;
         font-size: 14px;
+    }
+
+    .image-grid, .blur-options {
+        justify-content: space-between;
     }
 }
 
@@ -330,4 +354,26 @@ body {
         padding: 10px 20px;
         font-size: 14px;
     }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+}
+footer {
+    margin-top: 20px;
+}
+
+.license {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
 }

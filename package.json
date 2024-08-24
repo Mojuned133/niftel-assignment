@@ -1,18 +1,29 @@
 {
-  "name": "project",
+  "name": "niftel-assignment",
   "version": "1.0.0",
+  "description": "image editor project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm start"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mojuned133/niftel-assignment.git"
+  },
+  "keywords": [
+    "NA"
+  ],
+  "author": "Juned Gazi",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/Mojuned133/niftel-assignment/issues"
+  },
+  "homepage": "https://github.com/Mojuned133/niftel-assignment#readme",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "multer": "^1.4.5-lts.1",
-    "sharp": "^0.33.5"
+    "module": "^1.2.5",
+    "niftel-assignment": "file:",
+    "node": "^22.7.0"
   }
 }

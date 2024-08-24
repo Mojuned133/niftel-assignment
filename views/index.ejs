@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Editor</title>
+    <title>Niftel-Assignment</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -12,18 +12,22 @@
     <div class="editor-container">
         <aside class="sidebar" aria-label="Editor Sidebar">
             <nav class="tabs">
-                <button class="tab-button active" id="background-tab" aria-controls="background-panel" aria-selected="true">Background</button>
-                <button class="tab-button" id="paint-erase-tab" aria-controls="paint-erase-panel" aria-selected="false">Paint/Erase</button>
+                <button class="tab-button active" id="background-tab" aria-controls="background-panel"
+                    aria-selected="true">Background</button>
+                <button class="tab-button" id="paint-erase-tab" aria-controls="paint-erase-panel"
+                    aria-selected="false">Paint/Erase</button>
             </nav>
             <section id="background-panel" class="blur-section">
                 <h3>Blur</h3>
-                <!-- File input for uploading the main image -->
+                <!-- Upload box for uploading the main image -->
                 <div class="upload-box" id="upload-main-image-box">
-                    <input type="file" id="upload-image" accept="image/png" style="display:none;" aria-label="Upload image for preview">
+                    <input type="file" id="upload-image" accept="image/png" style="display:none;"
+                        aria-label="Upload image for preview">
                     <label for="upload-image" class="upload-label">
                         <span class="upload-icon" aria-hidden="true">&#8682;</span>
                     </label>
                 </div>
+
                 <div class="blur-options">
                     <!-- Existing blur options will be dynamically inserted here -->
                 </div>
@@ -31,20 +35,24 @@
 
             <section id="image-selection-panel" class="image-selection">
                 <h3>Select Image</h3>
-                <div class="upload-section">
-                    <div class="upload-box">
-                        <input type="file" id="upload-background" accept="image/*" style="display: none;" aria-label="Upload background image">
-                        <label for="upload-background" class="upload-label">
-                            <span class="upload-icon" aria-hidden="true">&#8682;</span>
-                        </label>
-                    </div>
-                </div>
+
                 <div class="image-grid" aria-labelledby="image-grid-label">
+                    <div class="upload-section">
+                        <div class="upload-box">
+                            <input type="file" id="upload-background" accept="image/*" style="display: none;"
+                                aria-label="Upload background image">
+                            <label for="upload-background" class="upload-label">
+                                <span class="upload-icon" aria-hidden="true">&#8682;</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <% images.forEach(function(image) { %>
                         <div class="thumb-box">
-                            <img src="/images/<%= image %>" alt="Thumbnail of <%= image %>" class="thumb-image" data-image="/images/<%= image %>">
+                            <img src="/images/<%= image %>" alt="Thumbnail of <%= image %>" class="thumb-image"
+                                data-image="/images/<%= image %>">
                         </div>
-                    <% }); %>
+                        <% }); %>
                 </div>
 
             </section>
@@ -52,7 +60,7 @@
 
         <main class="preview-area" id="preview-area" aria-label="Image Preview Area">
             <div class="background-image" id="background-image"></div>
-            <img src="/images/cute-cat-images-download-7.png" alt="Uploaded image preview" id="main-image">
+            <img src="" alt="Uploaded image preview" id="main-image">
             <div class="controls-overlay" aria-label="Image control buttons">
                 <button id="rotate-left" class="control-button" aria-label="Rotate Left">&#8634;</button>
                 <button id="rotate-right" class="control-button" aria-label="Rotate Right">&#8635;</button>
@@ -63,6 +71,13 @@
         </main>
     </div>
     <button class="download-button" id="download-button" aria-label="Download Image">Download</button>
+
+
+    <footer>
+        <p class="license">
+            License: MIT License | Author: Juned | © 2024 Juned. All rights reserved.
+        </p>
+    </footer>
 
     <script src="/javascripts/script.js"></script>
 </body>
